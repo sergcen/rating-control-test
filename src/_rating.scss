@@ -25,11 +25,10 @@ $rating-icon-aspect-ratio: 1.06666 !default;
     display: inline-block;
 
     input {
-        --image: inline("./star.svg") top left / cover;
         display: inline-block;
         margin: 0 1px 0 0;
         padding: 0;
-        mask: var(--image);
+        mask: inline("./star.svg") top left / cover;
         cursor: pointer;
         appearance: none;
         outline: none;
