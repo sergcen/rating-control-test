@@ -1,0 +1,23 @@
+{
+  "name": "rating-yandex-test",
+  "version": "1.0.0",
+  "description": "yandex test",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "cssnano": "^3.7.3",
+    "node-sass": "^3.8.0",
+    "postcss-assets": "^4.1.0",
+    "postcss-cli": "^2.5.2",
+    "svgo": "^0.6.6"
+  },
+  "scripts": {
+    "svg:optimize": "svgo ./src/star.svg --enable='removeViewBox,removeDoctype,removeXMLProcInst'",
+    "sass:build": "node-sass ./src/example.scss ./dist/example.css",
+    "postcss:build": "postcss --use autoprefixer --use cssnano --use postcss-assets --postcss-assets.basePath ./src -o ./dist/example.css ./dist/example.css",
+    "build": "npm run sass:build && npm run postcss:build"
+  },
+  "author": "",
+  "license": "ISC"
+}

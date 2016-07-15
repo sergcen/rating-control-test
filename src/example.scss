@@ -1,0 +1,17 @@
+@import 'rating';
+
+html {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.rating {
+    @extend %rating;
+
+    &--big {
+        @include make-size(50px);
+    }
+    &--blue {
+        @include make-skin(#ccc, linear-gradient( green, darken(green, 10)));
+    }
+}

@@ -1,0 +1,39 @@
+$rating-default-bg: linear-gradient(#d5d5d5, #717171) !default;
+$rating-default-bg-active: linear-gradient(#fff600, #ff6c00) !default;
+$rating-icon-aspect-ratio: 1.06666 !default;
+
+@mixin make-skin($background, $active-background) {
+    input {
+        background: $background;
+    }
+    input:checked,
+    input:checked ~ input {
+        background: $active-background;
+    }
+}
+
+@mixin make-size($size) {
+    input {
+        width: $size;
+        height: $size / $rating-icon-aspect-ratio;
+    }
+}
+
+%rating {
+    font-size: 0;
+    direction: rtl;
+    display: inline-block;
+
+    input {
+        --image: inline("./star.svg") top left / cover;
+        display: inline-block;
+        margin: 0 1px 0 0;
+        padding: 0;
+        mask: var(--image);
+        cursor: pointer;
+        appearance: none;
+        outline: none;
+    }
+    @include make-size(16px);
+    @include make-skin($rating-default-bg, $rating-default-bg-active);
+}
